@@ -53,3 +53,5 @@ export async function POST(req:NextRequest) {
     return NextResponse.json({answer,model:config.model,aqi,scale:'US EPA',source:'Open-Meteo model estimate'})
   }catch{return NextResponse.json({error:'AI request failed'},{status:503})}
 }
+
+export async function GET() { return NextResponse.json({configured: Boolean(providerConfig()?.key), provider: (process.env.AI_PROVIDER || 'groq').toLowerCase()}) }
