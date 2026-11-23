@@ -3,7 +3,7 @@
 import { CircleMarker, MapContainer, Popup, TileLayer, ZoomControl } from 'react-leaflet'
 import type { MapLocation } from './neighborhood-map-page'
 
-const colorForAqi = (aqi: number) => aqi > 400 ? '#9b174f' : aqi > 300 ? '#e52f58' : aqi > 200 ? '#ef7431' : aqi > 100 ? '#e5ad16' : '#159957'
+const colorForAqi = (aqi: number) => aqi > 300 ? '#9b174f' : aqi > 200 ? '#e52f58' : aqi > 150 ? '#ef7431' : aqi > 100 ? '#e5ad16' : aqi > 50 ? '#a6bd24' : '#159957'
 
 export function LeafletMap({ locations, selectedId, onSelect }: { locations: MapLocation[]; selectedId: string; onSelect: (id: string) => void }) {
   return (
